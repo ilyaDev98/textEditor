@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.StackPane?>
+
+
+<?import javafx.scene.layout.Pane?>
+<fx:root fx:id="editorView" type="StackPane"
+         xmlns="http://javafx.com/javafx/10.0.2"
+         xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <StackPane fx:id="stackPane" />
+</children>
+</fx:root>

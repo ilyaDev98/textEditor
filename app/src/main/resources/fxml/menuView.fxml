@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+
+<fx:root fx:id="menuView" prefWidth="1197.0" type="MenuBar" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/10.0.2">
+<menus>
+   <Menu text="Файл">
+      <items>
+         <MenuItem fx:id="createProjectMenuItem" text="Создать" accelerator="Ctrl+N" />
+         <MenuItem fx:id="openProjectMenuItem" text="Открыть" accelerator="Ctrl+O" />
+         <MenuItem fx:id="saveProjectMenuItem" text="Сохранить" accelerator="Ctrl+S" />
+         <MenuItem fx:id="saveProjectAsMenuItem" text="Сохранить как" accelerator="Ctrl+Shift+S" />
+         <MenuItem fx:id="exitProjectMenuItem" text="Выход" />
+      </items>
+   </Menu>
+   <Menu text="Правка">
+      <items>
+         <MenuItem fx:id="undoMenuItem" text="Отменить" accelerator="Ctrl+Z" />
+         <MenuItem fx:id="redoMenuItem" text="Повторить" accelerator="Ctrl+Y"/>
+         <MenuItem fx:id="cutMenuItem" text="Вырезать" accelerator="Ctrl+X" />
+         <MenuItem fx:id="copyMenuItem" text="Копировать" accelerator="Ctrl+C"/>
+         <MenuItem fx:id="pasteMenuItem" text="Вставить" accelerator="Ctrl+V"/>
+         <MenuItem fx:id="searchMenuItem" text="Найти" accelerator="Ctrl+F"/>
+      </items>
+   </Menu>
+   <Menu text="Справка">
+      <items>
+         <MenuItem fx:id="viewHelpMenuItem" text="Посмотреть справку"/>
+         <MenuItem fx:id="sendReviewMenuItem" text="Отправить отзыв"/>
+         <MenuItem fx:id="aboutTheProgramMenuItem" text="О программе..."/>
+      </items>
+   </Menu>
+</menus>
+</fx:root>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="709.0" prefWidth="1126.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="editor.view.controller.MainWindowView">
+<center>
+   <StackPane fx:id="editorView" BorderPane.alignment="CENTER" />
+</center>
+   <right>
+      <Pane fx:id="propertiesView" BorderPane.alignment="CENTER" />
+   </right>
+    <top>
+        <MenuBar fx:id="menuView" BorderPane.alignment="CENTER" />
+    </top>
+</BorderPane>
