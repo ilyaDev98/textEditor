@@ -1,1 +1,2 @@
-Java text editor created for educational purposes
+Text Editor
+A simple JavaFX text editor with a basic set of functions
