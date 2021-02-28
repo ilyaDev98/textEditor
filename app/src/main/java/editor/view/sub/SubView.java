@@ -1,6 +1,6 @@
 package editor.view.sub;
 
-import editor.MainApp;
+import editor.TextEditor;
 import editor.view.model.ViewType;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.Region;
@@ -23,7 +23,7 @@ public abstract class SubView {
 	}
 
 	private void loadView() {
-		FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/" + viewType.fxmlFileName + ".fxml"));
+		FXMLLoader loader = new FXMLLoader(TextEditor.class.getResource("/fxml/" + viewType.fxmlFileName + ".fxml"));
 		loader.setRoot(root);
 		loader.setController(this);
 		try {

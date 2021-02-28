@@ -2,7 +2,7 @@ package editor.view.service;
 
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
-import editor.InjectorApp;
+import editor.injector.InjectorApp;
 import editor.view.controller.WordSearchWindowView;
 import editor.view.model.ViewType;
 import editor.workspaceAction.service.WorkspaceAction;

@@ -3,6 +3,8 @@ package editor.view.controller;
 import com.google.inject.Inject;
 import com.google.inject.assistedinject.Assisted;
 import editor.editorSpace.model.EditorModel;
+import editor.markupList.model.MarkupListActionType;
+import editor.markupList.model.MarkupListType;
 import editor.observable.DocumentChangeUpdateObservable;
 import editor.observable.DocumentInsertUpdateObservable;
 import editor.view.model.ViewType;
@@ -49,12 +51,19 @@ public class PropertiesView extends SubView {
     public Button rightAlignButton;
     @FXML
     public Button wordSearchButton;
+    @FXML
+    public Button insertNumberingButton;
+    @FXML
+    public Button insertBulletsButton;
+    @FXML
+    public Button removeMarkupButton;
 
     private WorkspaceAction workspaceAction;
     private EditorModel editorModel;
     private DocumentChangeUpdateObservable documentChangeObservable;
     private DocumentInsertUpdateObservable documentInsertObservable;
     private WindowManager windowManager;
+
     @Inject
     PropertiesView(@Assisted Region root,
                    @Assisted ViewType viewType,
@@ -81,6 +90,7 @@ public class PropertiesView extends SubView {
         initSizeFonts();
         bindAlignButtons();
         bindWordSearchButton();
+        bindChangeNumberingButtons();
 
     }
 
@@ -98,7 +108,11 @@ public class PropertiesView extends SubView {
         centerAlignButton.setOnAction(event -> workspaceAction.setAlign(AlignmentType.CENTER));
         rightAlignButton.setOnAction(event -> workspaceAction.setAlign(AlignmentType.RIGHT));
     }
-
+    private void bindChangeNumberingButtons() {
+        insertNumberingButton.setOnAction(event -> workspaceAction.insertMarkupList(MarkupListType.NUMBERING));
+        insertBulletsButton.setOnAction(event -> workspaceAction.insertMarkupList(MarkupListType.BULLETS));
+        removeMarkupButton.setOnAction(event -> workspaceAction.removeMarkupList());
+    }
     private void bindWordSearchButton() {
 
         wordSearchButton.setOnAction(event ->{

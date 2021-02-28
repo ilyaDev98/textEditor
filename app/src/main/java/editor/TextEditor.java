@@ -2,6 +2,7 @@ package editor;
 
 import com.google.inject.Guice;
 import com.google.inject.Injector;
+import editor.injector.InjectorApp;
 import editor.observable.ioc.ObservableModule;
 import editor.ui.ioc.UIModule;
 import editor.editorSpace.ioc.EditorModule;
@@ -15,11 +16,14 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.stage.Stage;
 
-public class MainApp extends Application {
+public class TextEditor extends Application {
 
     private MainWindowView mainView;
     private Injector injector;
 
+    public static void main(String[] args) {
+        launch(args);
+    }
     @Override
     public void start(Stage stage) throws Exception {
 
@@ -50,8 +54,5 @@ public class MainApp extends Application {
         subViewFactory.buildMenuView(mainView.getMenuView(), ViewType.MENU_VIEW);
         subViewFactory.buildPropertiesView(mainView.getPropertiesView(), ViewType.PROPERTIES_VIEW);
 
-    }
-    public static void main(String[] args) throws Exception {
-        launch(args);
     }
 }

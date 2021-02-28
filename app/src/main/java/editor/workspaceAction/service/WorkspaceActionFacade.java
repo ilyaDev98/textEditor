@@ -3,6 +3,9 @@ package editor.workspaceAction.service;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import editor.editorSpace.model.EditorModel;
+import editor.markupList.service.MarkupListKeyService;
+import editor.markupList.model.MarkupListType;
+import editor.markupList.service.MarkupListService;
 import editor.searchWord.service.WordSearchService;
 import editor.workspaceAction.model.AlignmentType;
 import javafx.scene.paint.Color;
@@ -17,16 +20,22 @@ public class WorkspaceActionFacade implements WorkspaceAction {
     private final EditorModel editorModel;
     private final StyleDocumentService styleDocumentService;
     private final WordSearchService wordSearchService;
+    private final MarkupListService markupListService;
+    private final MarkupListKeyService markupListKeyService;
 
     @Inject
     WorkspaceActionFacade(UndoRedoService undoRedoService,
                           EditorModel editorModel,
                           StyleDocumentService styleDocumentService,
-                          WordSearchService wordSearchService) {
+                          WordSearchService wordSearchService,
+                          MarkupListService markupListService,
+                          MarkupListKeyService markupListKeyService) {
         this.undoRedoService = undoRedoService;
         this.editorModel = editorModel;
         this.styleDocumentService = styleDocumentService;
         this.wordSearchService = wordSearchService;
+        this.markupListService = markupListService;
+        this.markupListKeyService = markupListKeyService;
     }
 
     @Override
@@ -73,4 +82,13 @@ public class WorkspaceActionFacade implements WorkspaceAction {
         wordSearchService.unSearch();
     }
 
+    @Override
+    public void insertMarkupList(MarkupListType markupListType) {
+        markupListService.insertMarkupList(markupListType);
+    }
+
+    @Override
+    public void removeMarkupList() {
+        markupListService.removeMarkupList();
+    }
 }

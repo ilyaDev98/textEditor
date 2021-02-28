@@ -1,4 +1,4 @@
-package editor;
+package editor.injector;
 
 import com.google.inject.Injector;
 
